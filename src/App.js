@@ -21,7 +21,6 @@ function App() {
   useEffect(() => {
     gameService.getAll()
       .then(result => {
-        console.log(result.length);
         setGames(result);
       })
   }, []);

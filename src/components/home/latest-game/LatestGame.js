@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export const LatestGame = ({ game }) => {
+    console.log(game.category)
     return (
         <div className="game">
             <div className="image-wrap">

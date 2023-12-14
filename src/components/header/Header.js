@@ -6,7 +6,7 @@ export const Header = () => {
             {/* <!-- Navigation --> */}
             <h1><Link className="home" to="/">GamesPlay</Link></h1>
             <nav>
-                <Link to="/allgames">All games</Link>
+                <Link to="/catalog">All games</Link>
                 {/* <!-- Logged-in users --> */}
                 <div id="user">
                     <Link to="/create">Create Game</Link>
