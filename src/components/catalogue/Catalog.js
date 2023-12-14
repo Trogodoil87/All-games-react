@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { CatalogItem } from "./catalog-item/CatalogItem";
 
 export const Catalog = ({ games }) => {
-    console.log(games.length);
     return (
         <section id="catalog-page">
             <h1>All Games</h1>

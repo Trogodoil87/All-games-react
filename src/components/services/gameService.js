@@ -6,3 +6,10 @@ export const getAll = async () => {
 
     return result;
 }
+
+export const getById = async (gameId) => {
+    const response = await fetch(`${baseUrl}/data/games/${gameId}`);
+    const result = await response.json();
+
+    return result;
+}
