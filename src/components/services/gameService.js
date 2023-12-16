@@ -1,15 +1,15 @@
+import * as request from "./utils/requester";
+
 const baseUrl = "http://localhost:3030"
 
 export const getAll = async () => {
-    const response = await fetch(`${baseUrl}/data/games`);
-    const result = await response.json();
+    const result = request.get(`${baseUrl}/data/games`);
 
     return result;
 }
 
 export const getById = async (gameId) => {
-    const response = await fetch(`${baseUrl}/data/games/${gameId}`);
-    const result = await response.json();
+    const result = request.get(`${baseUrl}/data/games/${gameId}`);
 
     return result;
 }

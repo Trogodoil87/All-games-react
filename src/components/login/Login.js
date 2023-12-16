@@ -1,10 +1,34 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+import * as userService from "../services/authServices";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const Login = () => {
+    const { userLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+    function onSubmitHandler(e) {
+        e.preventDefault();
+
+        const {
+            email,
+            password
+        } = Object.fromEntries(new FormData(e.target));
+
+        userService.login(email, password)
+            .then(authData => {
+                userLogin(authData);
+                navigate('/');
+            })
+            .catch(() => {
+                navigate('/Home');
+            })
+    }
+
     return (
         // < !--Login Page(Only for Guest users ) -->
         <section id="login-page" className="auth">
-            <form id="login">
+            <form id="login" onSubmit={onSubmitHandler}>
 
                 <div className="container">
                     <div className="brand-logo"></div>

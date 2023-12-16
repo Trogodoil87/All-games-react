@@ -13,7 +13,7 @@ export const Home = ({ games }) => {
             <div id="home-page">
                 <h1>Latest Games</h1>
 
-                {games.length > 0
+                {games && games.length > 0
                     ? games.map(x => <LatestGame key={x._id} game={x} />)
                     : <p className="no-articles">No games yet</p>
                 }

@@ -16,8 +16,7 @@ export const Edit = () => {
 
     function onSubmitClickHandler(e) {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        
+        const formData = Object.fromEntries(new FormData(e.target));
 
     }
 
